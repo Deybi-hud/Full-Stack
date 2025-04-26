@@ -48,30 +48,30 @@ public class ProductosController {
     }
     
     @PutMapping
-    public Productos  putProductos(@RequestBody Productos producto) {
+    public ResponseEntity<?>  putProductos(@RequestBody Productos producto) {
         for(Productos p : productos){
             if (p.getID() == producto.getID()) {
                 p.setNombre(producto.getNombre());
                 p.setPrecio(producto.getPrecio());
-                return p;
+                return ResponseEntity.noContent().build();
             }
         }
-        return null;
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Producto no fue creado: " + producto.getNombre());
     }
 
     @DeleteMapping("/{id}")
-    public Productos deleteProductos(@PathVariable int id){
+    public ResponseEntity<?> deleteProductos(@PathVariable int id){
         for(Productos p: productos){
             if (p.getID() == id) {
                 productos.remove(p);
-                return p;
+                return ResponseEntity.noContent().build();
             }
         }
-        return null;
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("El ID no fue encontrado " + id);
     }
 
     @PatchMapping
-    public Productos patchProductos(@RequestBody Productos producto){
+    public ResponseEntity<?> patchProductos(@RequestBody Productos producto){
         for(Productos p: productos){
             if (p.getID() == producto.getID()) {
                 if (producto.getNombre() != null) {
@@ -80,9 +80,9 @@ public class ProductosController {
                 else if (producto.getPrecio() != 0) {
                     p.setPrecio(producto.getPrecio());
                 }
-                return p;
+                return ResponseEntity.ok("El producto fue modificado con exito " + p.getNombre());
             }
         }   
-        return null;
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("El producto no fue encontrado " + producto.getID());
     }
 }
