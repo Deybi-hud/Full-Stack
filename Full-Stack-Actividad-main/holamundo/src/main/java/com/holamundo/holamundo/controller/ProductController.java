@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.holamundo.holamundo.domain.Product;
+import com.holamundo.holamundo.service.ProductService;
 import com.holamundo.holamundo.service.ProductsServiceImpl;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -15,8 +16,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 @RequestMapping("/productos")
 public class ProductController {
 
-    //Se crea el obejto :) :(
-    ProductsServiceImpl productsServiceImpl = new ProductsServiceImpl();
+    //Se crea el objecto    (Polimorfismo   )
+    ProductService productsServiceImpl = new ProductsServiceImpl();
 
     @GetMapping
     public ResponseEntity<?> getProducts(){

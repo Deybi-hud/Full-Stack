@@ -3,16 +3,16 @@ package com.holamundo.holamundo.domain;
 public class Product {
 
     private Integer id;
-    private String nombre;
-    private Double precio;
+    private String name;
+    private Double preci;
     private Integer stock;
     
 
     
-    public Product(Integer id, String nombre, Double precio, Integer stock) {
+    public Product(Integer id, String name, Double preci, Integer stock) {
         this.id = id;
-        this.nombre = nombre;
-        this.precio = precio;
+        this.name = name;
+        this.preci = preci;
         this.stock = stock;
     }
 
@@ -24,20 +24,20 @@ public class Product {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String nombre) {
+        this.name = nombre;
     }
 
-    public Double getPrecio() {
-        return precio;
+    public Double getPreci() {
+        return preci;
     }
 
-    public void setPrecio(Double precio) {
-        this.precio = precio;
+    public void setPreci(Double precio) {
+        this.preci = precio;
     }
 
     public Integer getStock() {

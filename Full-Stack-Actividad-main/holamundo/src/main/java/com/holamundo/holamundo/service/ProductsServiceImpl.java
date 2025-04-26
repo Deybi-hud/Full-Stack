@@ -7,7 +7,7 @@ import java.util.List;
 
 import com.holamundo.holamundo.domain.Product;
 
-public class ProductsServiceImpl {
+public class ProductsServiceImpl implements ProductService{
     //Aqui va la logica del programa 
 
 
@@ -20,7 +20,7 @@ public class ProductsServiceImpl {
     ));
 
 
-
+    @Override
     public  List<Product> getProducts(){
         return products;
     }
