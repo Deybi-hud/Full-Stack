@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @RequestMapping("/productos")
 public class ProductController {
 
-    //Se crea el obejto :)
+    //Se crea el obejto :) :(
     ProductsServiceImpl productsServiceImpl = new ProductsServiceImpl();
 
     @GetMapping
