@@ -5,8 +5,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.holamundo.holamundo.domain.Product;
 
+
+@Service //Le indicamos al contenedor de Spring que esta clase es un bean de servicio
 public class ProductsServiceImpl implements ProductService{
     //Aqui va la logica del programa 
 

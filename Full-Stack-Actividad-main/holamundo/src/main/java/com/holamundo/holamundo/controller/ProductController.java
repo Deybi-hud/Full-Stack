@@ -2,13 +2,13 @@ package com.holamundo.holamundo.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.holamundo.holamundo.domain.Product;
 import com.holamundo.holamundo.service.ProductService;
-import com.holamundo.holamundo.service.ProductsServiceImpl;
 import org.springframework.web.bind.annotation.GetMapping;
 
 
@@ -16,13 +16,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 @RequestMapping("/productos")
 public class ProductController {
 
-    //Se crea el objecto    (Polimorfismo   )
-    ProductService productsServiceImpl = new ProductsServiceImpl();
+
+    //inyección de dependencia
+    //Instancia de clase
+    @Autowired 
+    private ProductService productsService;
 
     @GetMapping
     public ResponseEntity<?> getProducts(){
 
-        List<Product> products = productsServiceImpl.getProducts();
+        List<Product> products = productsService.getProducts();
             
         return ResponseEntity.ok(products);
     }
