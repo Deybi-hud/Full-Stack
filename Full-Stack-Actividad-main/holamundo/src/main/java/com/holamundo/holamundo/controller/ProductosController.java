@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.*;
 public class ProductosController {
 
     private List<Productos> productos = new ArrayList<>(Arrays.asList(
-        new Productos(1, "Tv", 400000),
-        new Productos(2, "Pc", 1000000)
+        new Productos(1, "TV", 400000),
+        new Productos(2, "PC", 1000000)
     ));
 
     //@GetMapping
