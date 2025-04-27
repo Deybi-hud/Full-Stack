@@ -8,6 +8,12 @@ public class Product {
     private Integer stock;
     
 
+    public Product() {
+        this.id = 0;
+        this.name = "";
+        this.preci = 0.0;
+        this.stock = 0;
+    }
     
     public Product(Integer id, String name, Double preci, Integer stock) {
         this.id = id;
@@ -15,6 +21,8 @@ public class Product {
         this.preci = preci;
         this.stock = stock;
     }
+    
+
 
     public Integer getId() {
         return id;

@@ -3,6 +3,7 @@ package com.holamundo.holamundo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,8 +19,8 @@ public class ProductController {
 
 
     //inyección de dependencia
-    //Instancia de clase
-    @Autowired 
+    @Autowired
+    @Qualifier("jsonResourceService")
     private ProductService productsService;
 
     @GetMapping

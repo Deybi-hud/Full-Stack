@@ -10,11 +10,9 @@ import org.springframework.stereotype.Service;
 import com.holamundo.holamundo.domain.Product;
 
 
-@Service //Le indicamos al contenedor de Spring que esta clase es un bean de servicio
+@Service("listResourceService") //Le indicamos al contenedor de Spring que esta clase es un bean de servicio
 public class ProductsServiceImpl implements ProductService{
     //Aqui va la logica del programa 
-
-
 
     List<Product> products = new ArrayList<>(Arrays.asList(
         new Product(1, "Laptop", 799.99, 10),
